@@ -2,21 +2,21 @@
  * @Author: zhangqh zhangqihao@shangyangtai.com
  * @Date: 2023-01-29 11:55:46
  * @LastEditors: zhangqh zhangqihao@shangyangtai.com
- * @LastEditTime: 2023-01-29 13:39:26
+ * @LastEditTime: 2023-01-29 17:07:04
  * @FilePath: \cloud\cloud-ui\src\components\UploadBox\UploadBox.jsx
- * @Description: 
- * 
- * Copyright (c) 2023 by zhangqh zhangqihao@shangyangtai.com, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2023 by zhangqh zhangqihao@shangyangtai.com, All Rights Reserved.
  */
 import { InboxOutlined } from '@ant-design/icons';
 import { message, Upload } from 'antd';
 const { Dragger } = Upload;
-const { api } = require('../../../config')
+import domain from '../../../config/domain';
 
 const props = {
   name: 'file',
   multiple: true,
-  action: `${api.baseUrl}/files`,
+  action: `${domain.API}/files`,
   onChange(info) {
     const { status } = info.file;
     if (status !== 'uploading') {
@@ -39,8 +39,8 @@ const UploadBox = () => (
     </p>
     <p className="ant-upload-text">Click or drag file to this area to upload</p>
     <p className="ant-upload-hint">
-      Support for a single or bulk upload. Strictly prohibit from uploading company data or other
-      band files
+      Support for a single or bulk upload. Strictly prohibit from uploading
+      company data or other band files
     </p>
   </Dragger>
 );

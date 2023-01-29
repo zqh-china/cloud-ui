@@ -2,11 +2,12 @@
   "private": true,
   "author": "zhangqh <zhangqihao@shangyangtai.com>",
   "scripts": {
-    "dev": "max dev",
     "build": "max build",
+    "dev": "max dev",
+    "dev2": "umi dev",
     "format": "prettier --cache --write .",
-    "prepare": "husky install",
     "postinstall": "max setup",
+    "prepare": "husky install",
     "setup": "max setup",
     "start": "npm run dev"
   },
