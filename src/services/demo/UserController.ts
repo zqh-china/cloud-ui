@@ -1,0 +1,106 @@
+/*
+ * @Author: zhangqh zhangqihao@shangyangtai.com
+ * @Date: 2023-01-29 11:32:44
+ * @LastEditors: zhangqh zhangqihao@shangyangtai.com
+ * @LastEditTime: 2023-01-29 11:42:38
+ * @FilePath: \cloud\cloud-ui\src\services\demo\UserController.ts
+ * @Description: 
+ * 
+ * Copyright (c) 2023 by zhangqh zhangqihao@shangyangtai.com, All Rights Reserved. 
+ */
+/* eslint-disable */
+// 该文件由 OneAPI 自动生成，请勿手动修改！
+import { request } from '@umijs/max';
+
+/** 此处后端没有提供注释 GET /api/v1/queryUserList */
+export async function queryUserList(
+  params: {
+    // query
+    /** keyword */
+    keyword?: string;
+    /** current */
+    current?: number;
+    /** pageSize */
+    pageSize?: number;
+  },
+  options?: { [key: string]: any },
+) {
+  return request('/api/v1/queryUserList', {
+    method: 'GET',
+    params: {
+      ...params,
+    },
+    ...(options || {}),
+  });
+}
+
+/** 此处后端没有提供注释 POST /api/v1/user */
+export async function addUser(
+  body?: API.UserInfoVO,
+  options?: { [key: string]: any },
+) {
+  return request('/api/v1/user', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** 此处后端没有提供注释 GET /api/v1/user/${param0} */
+export async function getUserDetail(
+  params: {
+    // path
+    /** userId */
+    userId?: string;
+  },
+  options?: { [key: string]: any },
+) {
+  const { userId: param0 } = params;
+  return request(`/api/v1/user/${param0}`, {
+    method: 'GET',
+    params: { ...params },
+    ...(options || {}),
+  });
+}
+
+/** 此处后端没有提供注释 PUT /api/v1/user/${param0} */
+export async function modifyUser(
+  params: {
+    // path
+    /** userId */
+    userId?: string;
+  },
+  body?: API.UserInfoVO,
+  options?: { [key: string]: any },
+) {
+  const { userId: param0 } = params;
+  return request(`/api/v1/user/${param0}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    params: { ...params },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** 此处后端没有提供注释 DELETE /api/v1/user/${param0} */
+export async function deleteUser(
+  params: {
+    // path
+    /** userId */
+    userId?: string;
+  },
+  options?: { [key: string]: any },
+) {
+  const { userId: param0 } = params;
+  return request(`/api/v1/user/${param0}`, {
+    method: 'DELETE',
+    params: { ...params },
+    ...(options || {}),
+  });
+}
